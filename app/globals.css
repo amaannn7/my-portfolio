@@ -1,26 +1,503 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --f1-red: #E10600;
+  --f1-red-dark: #B30500;
+  --f1-carbon: #0D0D0D;
+  --f1-carbon-light: #1A1A1A;
+  --f1-silver: #C0C0C0;
+  --f1-white: #FFFFFF;
+  --f1-yellow: #FFD700;
+  --f1-green: #00D2BE;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-f1-red: #E10600;
+  --color-f1-red-dark: #B30500;
+  --color-f1-carbon: #0D0D0D;
+  --color-f1-carbon-light: #1A1A1A;
+  --color-f1-silver: #C0C0C0;
+  --color-f1-yellow: #FFD700;
+  --color-f1-green: #00D2BE;
+  --font-sans: var(--font-rajdhani);
+  --font-display: var(--font-orbitron);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-rajdhani), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===== F1 CHECKERED FLAG PATTERN ===== */
+.checkered-bg {
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.03) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+}
+
+/* ===== CARBON FIBER TEXTURE ===== */
+.carbon-fiber {
+  background:
+    linear-gradient(135deg, rgba(30, 30, 30, 0.6) 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, rgba(30, 30, 30, 0.6) 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, rgba(30, 30, 30, 0.6) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(30, 30, 30, 0.6) 25%, transparent 25%);
+  background-size: 4px 4px;
+  background-color: #0d0d0d;
+}
+
+/* ===== RACING STRIPE ===== */
+.racing-stripe-left {
+  position: relative;
+}
+
+.racing-stripe-left::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #E10600, #FF4136, #E10600);
+  border-radius: 0 2px 2px 0;
+}
+
+/* ===== SPEED LINES ===== */
+@keyframes speedLineLeft {
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.3;
+  }
+
+  90% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* ===== RACING CAR ANIMATION ===== */
+@keyframes racingCar {
+  0% {
+    transform: translateX(-150px) scaleX(1);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(calc(100vw + 150px)) scaleX(1);
+    opacity: 0;
+  }
+}
+
+.racing-car {
+  position: fixed;
+  top: 20%;
+  left: 0;
+  width: 120px;
+  height: 60px;
+  pointer-events: none;
+  z-index: 100;
+  animation: racingCar 3s ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.racing-car::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(225, 6, 0, 0.1) 20%,
+      rgba(225, 6, 0, 0.3) 40%,
+      #E10600 50%,
+      rgba(225, 6, 0, 0.3) 60%,
+      rgba(225, 6, 0, 0.1) 80%,
+      transparent 100%);
+  clip-path: polygon(0% 50%, 15% 30%, 40% 30%, 50% 20%, 70% 20%, 85% 30%, 100% 40%, 100% 60%, 85% 70%, 70% 80%, 50% 80%, 40% 70%, 15% 70%);
+  filter: blur(1px);
+}
+
+.racing-car::after {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(225, 6, 0, 0.6), transparent);
+  opacity: 0.5;
+}
+
+/* ===== SPEED TRAIL LINES ===== */
+@keyframes speedTrail {
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  90% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.speed-trail {
+  position: fixed;
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(225, 6, 0, 0.8), rgba(225, 6, 0, 0.4), transparent);
+  pointer-events: none;
+  z-index: 99;
+}
+
+.speed-trail-1 {
+  top: 25%;
+  animation: speedTrail 2.5s ease-in-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.speed-trail-2 {
+  top: 60%;
+  animation: speedTrail 2.8s ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.speed-trail-3 {
+  top: 80%;
+  animation: speedTrail 2.6s ease-in-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+/* ===== DRS ZONE GLOW ===== */
+@keyframes drsGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(225, 6, 0, 0.2), 0 0 60px rgba(225, 6, 0, 0.05);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(225, 6, 0, 0.4), 0 0 80px rgba(225, 6, 0, 0.1);
+  }
+}
+
+.drs-glow {
+  animation: drsGlow 2.5s ease-in-out infinite;
+}
+
+/* ===== GRID OVERLAY ===== */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(225, 6, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(225, 6, 0, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ===== RACING NUMBER ===== */
+.racing-number {
+  font-family: var(--font-orbitron), monospace;
+  font-weight: 900;
+  -webkit-text-stroke: 2px rgba(225, 6, 0, 0.5);
+  paint-order: stroke fill;
+}
+
+/* ===== HALO GLOW ON HOVER ===== */
+.halo-glow:hover {
+  box-shadow: 0 0 30px rgba(225, 6, 0, 0.25), inset 0 0 30px rgba(225, 6, 0, 0.05);
+}
+
+/* ===== CHECKERED FLAG LINE ===== */
+.checkered-line {
+  background-image: repeating-linear-gradient(90deg,
+      #fff 0px,
+      #fff 8px,
+      #E10600 8px,
+      #E10600 16px);
+  height: 4px;
+}
+
+/* ===== OVERTAKE BUTTON ===== */
+.overtake-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.overtake-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.overtake-btn:hover::after {
+  left: 100%;
+}
+
+/* ===== TELEMETRY BAR ===== */
+@keyframes telemetryFill {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: var(--fill-width, 75%);
+  }
+}
+
+.telemetry-bar {
+  animation: telemetryFill 1.5s ease-out forwards;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes racingPulse {
+
+  0%,
+  100% {
+    border-color: rgba(225, 6, 0, 0.3);
+  }
+
+  50% {
+    border-color: rgba(225, 6, 0, 0.8);
+  }
+}
+
+/* ===== ANIMATION CLASSES ===== */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.8s ease-out;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.8s ease-out;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s ease-out;
+}
+
+.animate-racing-pulse {
+  animation: racingPulse 2s ease-in-out infinite;
+}
+
+/* ===== DELAYS ===== */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+  animation-fill-mode: both;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+.animate-delay-600 {
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+
+.animate-delay-700 {
+  animation-delay: 0.7s;
+  animation-fill-mode: both;
+}
+
+.animate-delay-800 {
+  animation-delay: 0.8s;
+  animation-fill-mode: both;
+}
+
+/* ===== INFINITE SCROLL / MARQUEE ===== */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* ===== CUSTOM SCROLLBAR (F1 RED) ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E10600;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF2020;
+}
+
+/* ===== PULSE GLOW (F1 RED) ===== */
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(225, 6, 0, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(225, 6, 0, 0.35);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
 }
