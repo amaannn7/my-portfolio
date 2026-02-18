@@ -1,8 +1,16 @@
-import { Monitor, Server, Smartphone, Database, Cloud, Wrench, Github, Linkedin, Mail, Phone, MapPin, Flag, Zap, Timer, Gauge, Trophy, Radio, Globe, ExternalLink } from 'lucide-react';
+import { Monitor, Server, Smartphone, Database, Cloud, Wrench, Github, Linkedin, Mail, Phone, MapPin, Flag, Zap, Timer, Gauge, Trophy, Radio, Globe, ExternalLink, Download } from 'lucide-react';
+import LoadingScreen from './components/LoadingScreen';
+import ScrollProgress from './components/ScrollProgress';
+import BackToTop from './components/BackToTop';
+import TypingEffect from './components/TypingEffect';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white grid-overlay">
+      <LoadingScreen />
+      <ScrollProgress />
+      <BackToTop />
+
       {/* ===== RACING ANIMATIONS ===== */}
       <div className="racing-car"></div>
       <div className="speed-trail speed-trail-1"></div>
@@ -102,7 +110,10 @@ export default function Home() {
               <div className="flex items-center gap-3 justify-center md:justify-start animate-slide-up animate-delay-200">
                 <div className="h-[1px] w-8 bg-f1-red"></div>
                 <p className="text-lg text-gray-400 font-[var(--font-orbitron)] text-sm tracking-wider">
-                  FULL-STACK DEV &bull; UNDERGRADUATE
+                  <TypingEffect
+                    texts={['FULL-STACK DEVELOPER', 'MOBILE DEVELOPER', 'UNDERGRADUATE',]}
+                    className="text-sm tracking-wider"
+                  />
                 </p>
                 <div className="h-[1px] w-8 bg-f1-red"></div>
               </div>
@@ -113,7 +124,7 @@ export default function Home() {
               Clean code. Peak performance. Podium-worthy results.
             </p>
 
-            <div className="flex gap-4 justify-center md:justify-start animate-scale-in animate-delay-400">
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start animate-scale-in animate-delay-400">
               <a
                 href="#projects"
                 className="overtake-btn px-8 py-4 bg-f1-red hover:bg-f1-red-dark text-white rounded-lg font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-f1-red/30 tracking-wider uppercase font-[var(--font-orbitron)]"
@@ -126,7 +137,15 @@ export default function Home() {
                 className="px-8 py-4 border-2 border-f1-red/30 hover:border-f1-red text-white rounded-lg font-bold text-sm transition-all duration-300 hover:scale-105 hover:bg-f1-red/10 tracking-wider uppercase font-[var(--font-orbitron)]"
               >
                 <Radio className="w-4 h-4 inline mr-2" />
-                Team Radio
+                Contact
+              </a>
+              <a
+                href="/resume.pdf"
+                download
+                className="px-8 py-4 border-2 border-white/10 hover:border-white/40 text-gray-300 hover:text-white rounded-lg font-bold text-sm transition-all duration-300 hover:scale-105 hover:bg-white/5 tracking-wider uppercase font-[var(--font-orbitron)]"
+              >
+                <Download className="w-4 h-4 inline mr-2" />
+                Resume
               </a>
             </div>
           </div>
@@ -653,6 +672,151 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white mb-1">G.C.E. Advanced Levels</h3>
                   <p className="text-gray-400 text-sm font-semibold">Defence Services College</p>
                   <p className="text-gray-500 text-xs font-[var(--font-orbitron)] tracking-wider mt-1">2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CAREER TIMELINE ===== */}
+      <section className="py-32 px-6 border-t border-f1-red/10 relative">
+        <div className="checkered-line w-full absolute top-0 left-0"></div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-4 mb-2">
+              <Flag className="w-8 h-8 text-f1-red" />
+              <h2 className="text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
+                <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent">
+                  TIMELINE
+                </span>
+              </h2>
+            </div>
+            <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-[0.3em]">CAREER JOURNEY</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* ── Career column ── */}
+            <div>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-1.5 h-8 bg-f1-red rounded-full"></div>
+                <h3 className="text-xl font-bold font-[var(--font-orbitron)] text-white tracking-wider">CAREER</h3>
+              </div>
+              <div className="relative pl-6">
+                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-f1-red via-f1-red/40 to-transparent"></div>
+
+                {/* Education */}
+                <div className="relative mb-8">
+                  <div className="absolute -left-[1.625rem] top-5 w-3.5 h-3.5 rounded-full bg-f1-red border-4 border-black shadow-[0_0_8px_rgba(225,6,0,0.6)]"></div>
+                  <div className="bg-f1-carbon-light border border-f1-red/15 rounded-2xl p-6 hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">2023 — PRESENT</span>
+                      <span className="text-[10px] px-2 py-0.5 rounded bg-f1-green/10 text-f1-green border border-f1-green/20 font-[var(--font-orbitron)] tracking-wider">ACTIVE</span>
+                    </div>
+                    <h4 className="text-lg font-bold text-white mt-1 mb-1">BEng (Hons) Software Engineering</h4>
+                    <p className="text-sm text-f1-red/80 font-semibold mb-2">Informatics Institute of Technology (IIT)</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">Affiliated with the University of Westminster. Specialising in software engineering and full-stack development.</p>
+                  </div>
+                </div>
+
+                {/* Internship */}
+                <div className="relative mb-8">
+                  <div className="absolute -left-[1.625rem] top-5 w-3.5 h-3.5 rounded-full bg-f1-red border-4 border-black shadow-[0_0_8px_rgba(225,6,0,0.6)]"></div>
+                  <div className="bg-f1-carbon-light border border-f1-red/15 rounded-2xl p-6 hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">JUL 2025 — AUG 2025</span>
+                      <span className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-gray-400 border border-white/10 font-[var(--font-orbitron)] tracking-wider">COMPLETED</span>
+                    </div>
+                    <h4 className="text-lg font-bold text-white mt-1 mb-1">Summer Intern</h4>
+                    <p className="text-sm text-f1-red/80 font-semibold mb-2">Rizing (A Wipro Company)</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">Gained industry exposure through corporate workshops, site visits, and collaborative projects.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ── Projects column ── */}
+            <div>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-1.5 h-8 bg-f1-red rounded-full"></div>
+                <h3 className="text-xl font-bold font-[var(--font-orbitron)] text-white tracking-wider">PROJECTS</h3>
+              </div>
+              <div className="relative pl-6">
+                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-f1-red via-f1-red/40 to-transparent"></div>
+
+                {/* Lexfy */}
+                <div className="relative mb-8">
+                  <div className="absolute -left-[1.625rem] top-5 w-3.5 h-3.5 rounded-full bg-f1-red border-4 border-black shadow-[0_0_8px_rgba(225,6,0,0.6)]"></div>
+                  <div className="bg-f1-carbon-light border border-f1-red/15 rounded-2xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                    <div className="flex">
+                      <div className="flex-1 p-6">
+                        <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">2024</span>
+                        <h4 className="text-lg font-bold text-white mt-1 mb-1">AI Vocabulary App</h4>
+                        <p className="text-sm text-f1-red/80 font-semibold mb-2">Personal Project — Lexfy</p>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4">Mobile-first AI-powered vocabulary learning platform using Flutter, Express, and MySQL.</p>
+                        <div className="flex gap-2 flex-wrap">
+                          <a href="https://lexfy.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-f1-red/10 hover:bg-f1-red/20 border border-f1-red/20 hover:border-f1-red/50 text-white rounded-lg text-xs font-semibold transition-all duration-200">
+                            <ExternalLink className="w-3 h-3" /> Live Site
+                          </a>
+                          <a href="https://github.com/amaannn7/lexfy-vocabulary-enhancement-app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-gray-300 rounded-lg text-xs font-semibold transition-all duration-200">
+                            <Github className="w-3 h-3" /> GitHub
+                          </a>
+                        </div>
+                      </div>
+                      <div className="w-28 shrink-0 bg-black/30 flex items-center justify-center p-3">
+                        <img src="/vocabulary.PNG" alt="Lexfy" className="w-full h-auto object-contain rounded-lg opacity-90" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Helmet Store */}
+                <div className="relative mb-8">
+                  <div className="absolute -left-[1.625rem] top-5 w-3.5 h-3.5 rounded-full bg-f1-red border-4 border-black shadow-[0_0_8px_rgba(225,6,0,0.6)]"></div>
+                  <div className="bg-f1-carbon-light border border-f1-red/15 rounded-2xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                    <div className="flex">
+                      <div className="flex-1 p-6">
+                        <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">2025</span>
+                        <h4 className="text-lg font-bold text-white mt-1 mb-1">E-Commerce Helmet Store</h4>
+                        <p className="text-sm text-f1-red/80 font-semibold mb-2">Full-Stack Project</p>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4">Complete e-commerce platform with React, Node.js, and MongoDB including payment integration.</p>
+                        <div className="flex gap-2 flex-wrap">
+                          <a href="https://tavisgomotors.lk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-f1-red/10 hover:bg-f1-red/20 border border-f1-red/20 hover:border-f1-red/50 text-white rounded-lg text-xs font-semibold transition-all duration-200">
+                            <ExternalLink className="w-3 h-3" /> Live Site
+                          </a>
+                        </div>
+                      </div>
+                      <div className="w-28 shrink-0 bg-black/30 flex items-center justify-center p-3">
+                        <img src="/helmet.png" alt="Helmet Store" className="w-full h-auto object-contain rounded-lg opacity-90" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Oracle */}
+                <div className="relative mb-8">
+                  <div className="absolute -left-[1.625rem] top-5 w-3.5 h-3.5 rounded-full bg-f1-red border-4 border-black shadow-[0_0_8px_rgba(225,6,0,0.6)]"></div>
+                  <div className="bg-f1-carbon-light border border-f1-red/15 rounded-2xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                    <div className="flex">
+                      <div className="flex-1 p-6">
+                        <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">2025</span>
+                        <h4 className="text-lg font-bold text-white mt-1 mb-1">Oracle Services Corporate Website</h4>
+                        <p className="text-sm text-f1-red/80 font-semibold mb-2">Client Project</p>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4">Live corporate website for a leading Sri Lankan security services company, built with Next.js.</p>
+                        <div className="flex gap-2 flex-wrap">
+                          <a href="https://oracleservices.lk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-f1-red/10 hover:bg-f1-red/20 border border-f1-red/20 hover:border-f1-red/50 text-white rounded-lg text-xs font-semibold transition-all duration-200">
+                            <ExternalLink className="w-3 h-3" /> Live Site
+                          </a>
+                          <a href="https://github.com/amaannn7/oracle-security" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-gray-300 rounded-lg text-xs font-semibold transition-all duration-200">
+                            <Github className="w-3 h-3" /> GitHub
+                          </a>
+                        </div>
+                      </div>
+                      <div className="w-28 shrink-0 bg-black/30 flex items-center justify-center p-3">
+                        <img src="/oracle.png" alt="Oracle Services" className="w-full h-auto object-contain rounded-lg opacity-90" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
