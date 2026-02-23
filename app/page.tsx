@@ -102,6 +102,22 @@ export default function Home() {
               ))}
             </div>
 
+            {/* DRS / ERS HUD strip */}
+            <div className="flex items-center gap-4 justify-center md:justify-start animate-fade-in animate-delay-100">
+              <div className="flex items-center gap-1.5 px-2.5 py-1 bg-f1-green/10 border border-f1-green/20 rounded">
+                <div className="w-1.5 h-1.5 rounded-full bg-f1-green led-blink"></div>
+                <span className="text-[9px] font-[var(--font-orbitron)] text-f1-green tracking-widest">DRS&nbsp;ACT</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[9px] font-[var(--font-orbitron)] text-gray-500 tracking-widest">ERS</span>
+                <div className="w-20 h-[5px] bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div className="ers-fill h-full bg-gradient-to-r from-f1-green to-f1-green/60 rounded-full" />
+                </div>
+                <span className="text-[9px] font-[var(--font-orbitron)] text-f1-green delta-tick">97%</span>
+              </div>
+              <span className="sector-badge sector-purple hidden sm:inline-flex">&#9679;&nbsp;PERSONAL BEST</span>
+            </div>
+
             <div className="space-y-3">
               <p className="text-sm font-[var(--font-orbitron)] text-f1-red tracking-[0.3em] uppercase animate-fade-in">
                 SOFTWARE ENGINEER
@@ -155,6 +171,30 @@ export default function Home() {
                 <Download className="w-4 h-4 inline mr-2" />
                 Resume
               </a>
+            </div>
+
+            {/* Pit board timing strip */}
+            <div className="flex items-stretch w-fit border border-white/10 rounded-xl overflow-hidden animate-fade-in animate-delay-500">
+              <div className="timing-cell bg-f1-red">
+                <p className="text-[7px] font-[var(--font-orbitron)] text-white/60">POS</p>
+                <p className="text-sm font-[var(--font-orbitron)] font-black text-white leading-tight">P1</p>
+              </div>
+              <div className="timing-cell">
+                <p className="text-[7px] font-[var(--font-orbitron)] text-white/40 mb-0.5">TIRE</p>
+                <div className="tire-soft mx-auto">S</div>
+              </div>
+              <div className="timing-cell">
+                <p className="text-[7px] font-[var(--font-orbitron)] text-white/40">GAP</p>
+                <p className="text-sm font-[var(--font-orbitron)] font-black text-f1-green leading-tight delta-tick">+0.000</p>
+              </div>
+              <div className="timing-cell">
+                <p className="text-[7px] font-[var(--font-orbitron)] text-white/40">LAP</p>
+                <p className="text-sm font-[var(--font-orbitron)] font-black text-white leading-tight">07/∞</p>
+              </div>
+              <div className="timing-cell hidden sm:block">
+                <p className="text-[7px] font-[var(--font-orbitron)] text-white/40">STATUS</p>
+                <p className="text-[10px] font-[var(--font-orbitron)] font-bold text-f1-green leading-tight">RACING</p>
+              </div>
             </div>
           </div>
         </div>
@@ -221,6 +261,16 @@ export default function Home() {
                         <p className="text-sm font-semibold text-f1-green">Open to Opportunities</p>
                       </div>
                     </div>
+                    <div className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-all rounded-lg">
+                      <Gauge className="w-5 h-5 text-f1-red flex-shrink-0" />
+                      <div>
+                        <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-wider">GRID POSITION</p>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          <span className="px-2 py-0.5 bg-f1-red text-white text-[11px] font-[var(--font-orbitron)] font-black rounded">P1</span>
+                          <span className="text-xs text-gray-400 font-semibold">Starting from pole</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -243,6 +293,17 @@ export default function Home() {
                   <p className="text-[10px] font-[var(--font-orbitron)] text-gray-500 tracking-widest">{label}</p>
                 </div>
               ))}
+            </div>
+            {/* Fastest lap banner */}
+            <div className="mt-4 flex items-center justify-between px-5 py-3 bg-purple-900/10 border border-purple-500/20 rounded-xl">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-purple-500 flex-shrink-0"></div>
+                <span className="text-[10px] font-[var(--font-orbitron)] text-purple-400 tracking-widest">FASTEST LAP — PERSONAL BEST</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="tire-medium">M</div>
+                <span className="text-[11px] font-[var(--font-orbitron)] font-black text-purple-300">1:07.420</span>
+              </div>
             </div>
           </ScrollReveal>
         </div>
@@ -282,10 +343,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ===== SKILLS SECTION — RACE TELEMETRY ===== */}
-      <section id="skills" className="py-32 px-6 border-t border-f1-red/10 relative">
+      < section id="skills" className="py-32 px-6 border-t border-f1-red/10 relative" >
         <div className="checkered-line w-full absolute top-0 left-0"></div>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -296,6 +357,7 @@ export default function Home() {
                   SKILLS
                 </span>
               </h2>
+              <div className="tire-soft">S</div>
             </div>
             <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-[0.3em]">TECHNICAL EXPERTISE</p>
           </div>
@@ -504,10 +566,10 @@ export default function Home() {
               </div></ScrollReveal>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ===== PROJECTS SECTION — GRAND PRIX RESULTS ===== */}
-      <section id="projects" className="py-32 px-6 border-t border-f1-red/10 relative">
+      < section id="projects" className="py-32 px-6 border-t border-f1-red/10 relative" >
         <div className="checkered-line w-full absolute top-0 left-0"></div>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -518,6 +580,7 @@ export default function Home() {
                   PROJECTS
                 </span>
               </h2>
+              <div className="tire-medium">M</div>
             </div>
             <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-[0.3em]">FEATURED WORK</p>
           </div>
@@ -687,10 +750,10 @@ export default function Home() {
               </div></ScrollReveal>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ===== EXPERIENCE & EDUCATION — CAREER STANDINGS ===== */}
-      <section className="py-32 px-6 border-t border-f1-red/10 relative">
+      < section className="py-32 px-6 border-t border-f1-red/10 relative" >
         <div className="checkered-line w-full absolute top-0 left-0"></div>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
           {/* Experience — Race History */}
@@ -769,10 +832,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ===== CAREER TIMELINE ===== */}
-      <section className="py-32 px-6 border-t border-f1-red/10 relative">
+      < section className="py-32 px-6 border-t border-f1-red/10 relative" >
         <div className="checkered-line w-full absolute top-0 left-0"></div>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -914,14 +977,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ===== CONTACT SECTION — TEAM RADIO ===== */}
-      <section id="contact" className="py-32 px-6 border-t border-f1-red/10 relative">
+      < section id="contact" className="py-32 px-6 border-t border-f1-red/10 relative" >
         <div className="checkered-line w-full absolute top-0 left-0"></div>
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <Radio className="w-8 h-8 text-f1-red" />
+            <div className="relative">
+              <div className="radio-ring"></div>
+              <div className="radio-ring radio-ring-2"></div>
+              <div className="radio-ring radio-ring-3"></div>
+              <Radio className="w-8 h-8 text-f1-red relative z-10" />
+            </div>
             <h2 className="text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
               <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent">
                 CONTACT
@@ -973,10 +1041,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ===== FOOTER — POST-RACE ===== */}
-      <footer className="py-10 px-6 border-t border-f1-red/10 relative">
+      < footer className="py-10 px-6 border-t border-f1-red/10 relative" >
         <div className="checkered-line w-full absolute top-0 left-0"></div>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 pt-4">
           <div className="flex items-center gap-3">
@@ -985,6 +1053,11 @@ export default function Home() {
               &copy; 2026 AMAAN YUSUF
             </p>
           </div>
+          <div className="flex items-center gap-3">
+            <div className="tire-soft">S</div>
+            <span className="text-[9px] font-[var(--font-orbitron)] text-gray-600 tracking-[0.2em]">CONSTRUCTORS&apos; CHAMPION &mdash; 2026 SEASON</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-f1-yellow marshal-light"></div>
+          </div>
           <div className="flex gap-6 text-xs font-[var(--font-orbitron)] text-gray-500 tracking-wider">
             <a href="#about" className="hover:text-f1-red transition-colors">ABOUT</a>
             <a href="#skills" className="hover:text-f1-red transition-colors">SKILLS</a>
@@ -992,7 +1065,7 @@ export default function Home() {
             <a href="#contact" className="hover:text-f1-red transition-colors">CONTACT</a>
           </div>
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   );
 }
