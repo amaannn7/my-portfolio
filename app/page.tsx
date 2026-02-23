@@ -3,6 +3,8 @@ import LoadingScreen from './components/LoadingScreen';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
 import TypingEffect from './components/TypingEffect';
+import ScrollReveal from './components/ScrollReveal';
+import StatCounter from './components/StatCounter';
 
 export default function Home() {
   return (
@@ -167,55 +169,76 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6 animate-slide-left animate-delay-100">
-              <div className="racing-stripe-left pl-6">
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  I'm a dedicated Software Engineering undergraduate with a passion for building innovative
-                  solutions. My expertise spans across modern web frameworks, mobile development, and cloud technologies.
-                </p>
+          <ScrollReveal variant="fade-up">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6 animate-slide-left animate-delay-100">
+                <div className="racing-stripe-left pl-6">
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    I'm a dedicated Software Engineering undergraduate with a passion for building innovative
+                    solutions. My expertise spans across modern web frameworks, mobile development, and cloud technologies.
+                  </p>
+                </div>
+                <div className="racing-stripe-left pl-6">
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    Currently pursuing BEng (Hons) at Informatics Institute of Technology, I'm actively seeking
+                    internship opportunities to contribute to impactful projects and push beyond limits.
+                  </p>
+                </div>
               </div>
-              <div className="racing-stripe-left pl-6">
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  Currently pursuing BEng (Hons) at Informatics Institute of Technology, I'm actively seeking
-                  internship opportunities to contribute to impactful projects and push beyond limits.
-                </p>
-              </div>
-            </div>
 
-            {/* Driver data card */}
-            <div className="space-y-3 animate-slide-right animate-delay-200">
-              <div className="bg-f1-carbon-light border border-f1-red/20 rounded-xl p-1">
-                <div className="bg-f1-red/10 border border-f1-red/10 rounded-lg px-4 py-2 flex items-center justify-between">
-                  <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">DRIVER DATA</span>
-                  <span className="text-[10px] font-[var(--font-orbitron)] text-gray-500">2026 SEASON</span>
-                </div>
-                <div className="divide-y divide-white/5">
-                  <div className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-all rounded-lg">
-                    <MapPin className="w-5 h-5 text-f1-red flex-shrink-0" />
-                    <div>
-                      <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-wider">LOCATION</p>
-                      <p className="text-sm font-semibold text-white">Mount Lavinia, Sri Lanka</p>
-                    </div>
+              {/* Driver data card */}
+              <div className="space-y-3 animate-slide-right animate-delay-200">
+                <div className="bg-f1-carbon-light border border-f1-red/20 rounded-xl p-1">
+                  <div className="bg-f1-red/10 border border-f1-red/10 rounded-lg px-4 py-2 flex items-center justify-between">
+                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">DRIVER DATA</span>
+                    <span className="text-[10px] font-[var(--font-orbitron)] text-gray-500">2026 SEASON</span>
                   </div>
-                  <div className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-all rounded-lg">
-                    <Mail className="w-5 h-5 text-f1-red flex-shrink-0" />
-                    <div>
-                      <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-wider">TEAM RADIO</p>
-                      <p className="text-sm font-semibold text-white">amaan.yusuf4522@gmail.com</p>
+                  <div className="divide-y divide-white/5">
+                    <div className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-all rounded-lg">
+                      <MapPin className="w-5 h-5 text-f1-red flex-shrink-0" />
+                      <div>
+                        <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-wider">LOCATION</p>
+                        <p className="text-sm font-semibold text-white">Mount Lavinia, Sri Lanka</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-all rounded-lg">
-                    <Trophy className="w-5 h-5 text-f1-red flex-shrink-0" />
-                    <div>
-                      <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-wider">STATUS</p>
-                      <p className="text-sm font-semibold text-f1-green">Open to Opportunities</p>
+                    <div className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-all rounded-lg">
+                      <Mail className="w-5 h-5 text-f1-red flex-shrink-0" />
+                      <div>
+                        <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-wider">TEAM RADIO</p>
+                        <p className="text-sm font-semibold text-white">amaan.yusuf4522@gmail.com</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-all rounded-lg">
+                      <Trophy className="w-5 h-5 text-f1-red flex-shrink-0" />
+                      <div>
+                        <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-wider">STATUS</p>
+                        <p className="text-sm font-semibold text-f1-green">Open to Opportunities</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
+
+          {/* ── Stat Counters ── */}
+          <ScrollReveal variant="fade-up" delay={150} className="mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { label: 'PROJECTS', value: 3, suffix: '+' },
+                { label: 'TECHNOLOGIES', value: 16, suffix: '+' },
+                { label: 'YEARS CODING', value: 3, suffix: '+' },
+                { label: 'INTERNSHIPS', value: 1, suffix: '' },
+              ].map(({ label, value, suffix }) => (
+                <div key={label} className="bg-f1-carbon-light border border-f1-red/15 rounded-2xl p-6 text-center hover:border-f1-red/40 transition-all duration-300 halo-glow">
+                  <p className="text-4xl font-black font-[var(--font-orbitron)] text-f1-red mb-1">
+                    <StatCounter to={value} suffix={suffix} />
+                  </p>
+                  <p className="text-[10px] font-[var(--font-orbitron)] text-gray-500 tracking-widest">{label}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -273,151 +296,152 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Frontend */}
-            <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] animate-slide-up animate-delay-100 group halo-glow">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                  <Monitor className="w-7 h-7 text-f1-red" />
+            <ScrollReveal variant="fade-up" delay={0}>
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Monitor className="w-7 h-7 text-f1-red" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Frontend</h3>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">SECTOR 1</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Frontend</h3>
-                  <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">SECTOR 1</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { name: 'React', icon: 'react/react-original' },
+                    { name: 'TypeScript', icon: 'typescript/typescript-original' },
+                    { name: 'JavaScript', icon: 'javascript/javascript-original' },
+                  ].map((tech) => (
+                    <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
+                      <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className="w-5 h-5" alt={tech.name} />
+                      {tech.name}
+                    </span>
+                  ))}
                 </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { name: 'React', icon: 'react/react-original' },
-                  { name: 'TypeScript', icon: 'typescript/typescript-original' },
-                  { name: 'JavaScript', icon: 'javascript/javascript-original' },
-                ].map((tech) => (
-                  <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
-                    <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className="w-5 h-5" alt={tech.name} />
-                    {tech.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-
+              </div></ScrollReveal>
             {/* Backend */}
-            <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] animate-slide-up animate-delay-200 group halo-glow">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                  <Server className="w-7 h-7 text-f1-red" />
+            <ScrollReveal variant="fade-up" delay={80}>
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Server className="w-7 h-7 text-f1-red" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Backend</h3>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">SECTOR 2</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Backend</h3>
-                  <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">SECTOR 2</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { name: 'Node.js', icon: 'nodejs/nodejs-original' },
+                    { name: 'Express', icon: 'express/express-original', invert: true },
+                    { name: 'Java', icon: 'java/java-original' },
+                    { name: 'Spring', icon: 'spring/spring-original' },
+                    { name: 'Python', icon: 'python/python-original' },
+                  ].map((tech) => (
+                    <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
+                      <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className={`w-5 h-5 ${tech.invert ? 'invert' : ''}`} alt={tech.name} />
+                      {tech.name}
+                    </span>
+                  ))}
                 </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { name: 'Node.js', icon: 'nodejs/nodejs-original' },
-                  { name: 'Express', icon: 'express/express-original', invert: true },
-                  { name: 'Java', icon: 'java/java-original' },
-                  { name: 'Spring', icon: 'spring/spring-original' },
-                  { name: 'Python', icon: 'python/python-original' },
-                ].map((tech) => (
-                  <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
-                    <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className={`w-5 h-5 ${tech.invert ? 'invert' : ''}`} alt={tech.name} />
-                    {tech.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-
+              </div></ScrollReveal>
             {/* Mobile */}
-            <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] animate-slide-up animate-delay-300 group halo-glow">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                  <Smartphone className="w-7 h-7 text-f1-red" />
+            <ScrollReveal variant="fade-up" delay={160}>
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Smartphone className="w-7 h-7 text-f1-red" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Mobile</h3>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">SECTOR 3</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Mobile</h3>
-                  <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">SECTOR 3</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" className="w-5 h-5" alt="Flutter" />
+                    Flutter
+                  </span>
                 </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <span className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" className="w-5 h-5" alt="Flutter" />
-                  Flutter
-                </span>
-              </div>
-            </div>
-
+              </div></ScrollReveal>
             {/* Databases */}
-            <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] animate-slide-up animate-delay-400 group halo-glow">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                  <Database className="w-7 h-7 text-f1-red" />
+            <ScrollReveal variant="fade-up" delay={0}>
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Database className="w-7 h-7 text-f1-red" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Databases</h3>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">DATA CENTER</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Databases</h3>
-                  <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">DATA CENTER</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { name: 'MongoDB', icon: 'mongodb/mongodb-original' },
+                    { name: 'MySQL', icon: 'mysql/mysql-original' },
+                    { name: 'PostgreSQL', icon: 'postgresql/postgresql-original' },
+                    { name: 'Firebase', icon: 'firebase/firebase-plain' },
+                  ].map((tech) => (
+                    <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
+                      <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className="w-5 h-5" alt={tech.name} />
+                      {tech.name}
+                    </span>
+                  ))}
                 </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { name: 'MongoDB', icon: 'mongodb/mongodb-original' },
-                  { name: 'MySQL', icon: 'mysql/mysql-original' },
-                  { name: 'PostgreSQL', icon: 'postgresql/postgresql-original' },
-                  { name: 'Firebase', icon: 'firebase/firebase-plain' },
-                ].map((tech) => (
-                  <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
-                    <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className="w-5 h-5" alt={tech.name} />
-                    {tech.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-
+              </div></ScrollReveal>
             {/* Cloud */}
-            <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] animate-slide-up animate-delay-500 group halo-glow">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                  <Cloud className="w-7 h-7 text-f1-red" />
+            <ScrollReveal variant="fade-up" delay={80}>
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Cloud className="w-7 h-7 text-f1-red" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Cloud</h3>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">CLOUD INFRA</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Cloud</h3>
-                  <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">CLOUD INFRA</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { name: 'AWS', icon: 'amazonwebservices/amazonwebservices-plain-wordmark', invert: true },
+                    { name: 'Azure', icon: 'azure/azure-original' },
+                    { name: 'Vercel', icon: 'vercel/vercel-original', invert: true },
+                  ].map((tech) => (
+                    <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
+                      <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className={`w-5 h-5 ${tech.invert ? 'invert' : ''}`} alt={tech.name} />
+                      {tech.name}
+                    </span>
+                  ))}
                 </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { name: 'AWS', icon: 'amazonwebservices/amazonwebservices-plain-wordmark', invert: true },
-                  { name: 'Azure', icon: 'azure/azure-original' },
-                  { name: 'Vercel', icon: 'vercel/vercel-original', invert: true },
-                ].map((tech) => (
-                  <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
-                    <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className={`w-5 h-5 ${tech.invert ? 'invert' : ''}`} alt={tech.name} />
-                    {tech.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-
+              </div></ScrollReveal>
             {/* Tools */}
-            <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] animate-slide-up animate-delay-600 group halo-glow">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                  <Wrench className="w-7 h-7 text-f1-red" />
+            <ScrollReveal variant="fade-up" delay={160}>
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Wrench className="w-7 h-7 text-f1-red" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Tools</h3>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">PIT CREW</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Tools</h3>
-                  <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">PIT CREW</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { name: 'Git', icon: 'git/git-original' },
+                    { name: 'GitHub', icon: 'github/github-original', invert: true },
+                    { name: 'Postman', icon: 'postman/postman-original' },
+                  ].map((tech) => (
+                    <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
+                      <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className={`w-5 h-5 ${tech.invert ? 'invert' : ''}`} alt={tech.name} />
+                      {tech.name}
+                    </span>
+                  ))}
                 </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { name: 'Git', icon: 'git/git-original' },
-                  { name: 'GitHub', icon: 'github/github-original', invert: true },
-                  { name: 'Postman', icon: 'postman/postman-original' },
-                ].map((tech) => (
-                  <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-300 rounded-lg text-sm font-semibold hover:bg-f1-red/10 hover:text-white hover:border-f1-red/30 transition-all border border-white/10">
-                    <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className={`w-5 h-5 ${tech.invert ? 'invert' : ''}`} alt={tech.name} />
-                    {tech.name}
-                  </span>
-                ))}
-              </div>
-            </div>
+              </div></ScrollReveal>
           </div>
         </div>
       </section>
@@ -440,159 +464,164 @@ export default function Home() {
 
           <div className="space-y-12">
             {/* Project 1 — Race 1 */}
-            <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 animate-slide-up animate-delay-100 halo-glow">
-              <div className="grid md:grid-cols-5 gap-0">
-                <div className="md:col-span-2 relative h-80 md:h-auto bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
-                  <img src="/helmet.png" alt="Helmet Store" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-                  {/* Race position badge */}
-                  <div className="absolute top-6 right-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
-                    RACE 01 &bull; 2025
+            <ScrollReveal variant="fade-up" delay={0}>
+              <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                <div className="grid md:grid-cols-5 gap-0">
+                  <div className="md:col-span-2 relative h-80 md:h-auto bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
+                    <img src="/helmet.png" alt="Helmet Store" loading="lazy" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                    {/* Race position badge */}
+                    <div className="absolute top-6 right-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
+                      RACE 01 &bull; 2025
+                    </div>
+                    {/* Fastest lap indicator */}
+                    <div className="absolute bottom-6 left-6 flex items-center gap-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-purple-500/30">
+                      <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                      <span className="text-[10px] font-[var(--font-orbitron)] text-purple-400 tracking-wider">FASTEST LAP</span>
+                    </div>
+                    {/* Dark gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
                   </div>
-                  {/* Fastest lap indicator */}
-                  <div className="absolute bottom-6 left-6 flex items-center gap-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-purple-500/30">
-                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                    <span className="text-[10px] font-[var(--font-orbitron)] text-purple-400 tracking-wider">FASTEST LAP</span>
+                  <div className="md:col-span-3 p-10">
+                    <div className="flex items-center gap-3 mb-2">
+                      <Timer className="w-4 h-4 text-f1-red" />
+                      <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">FULL-STACK APPLICATION</span>
+                    </div>
+                    <h3 className="text-3xl font-bold text-white mb-4">E-Commerce Helmet Store</h3>
+                    <p className="text-gray-400 text-base leading-relaxed mb-6">
+                      Full-stack e-commerce platform featuring secure payment integration, comprehensive
+                      admin dashboard, and real-time inventory management. Built with modern technologies
+                      for optimal performance and scalability.
+                    </p>
+                    <div className="flex flex-wrap gap-3 mb-4">
+                      {[
+                        { name: 'React', icon: 'react/react-original' },
+                        { name: 'Node.js', icon: 'nodejs/nodejs-original' },
+                        { name: 'MongoDB', icon: 'mongodb/mongodb-original' },
+                      ].map((tech) => (
+                        <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-f1-red/10 text-white rounded-lg text-sm font-semibold border border-f1-red/20">
+                          <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className="w-4 h-4" alt="" />
+                          {tech.name}
+                        </span>
+                      ))}
+                    </div>
+                    <a href="https://tavisgomotors.lk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-f1-red hover:bg-f1-red-dark text-white rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105 shadow-lg shadow-f1-red/20">
+                      <ExternalLink className="w-4 h-4" />
+                      Visit Live Site
+                    </a>
                   </div>
-                  {/* Dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
-                </div>
-                <div className="md:col-span-3 p-10">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Timer className="w-4 h-4 text-f1-red" />
-                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">FULL-STACK APPLICATION</span>
-                  </div>
-                  <h3 className="text-3xl font-bold text-white mb-4">E-Commerce Helmet Store</h3>
-                  <p className="text-gray-400 text-base leading-relaxed mb-6">
-                    Full-stack e-commerce platform featuring secure payment integration, comprehensive
-                    admin dashboard, and real-time inventory management. Built with modern technologies
-                    for optimal performance and scalability.
-                  </p>
-                  <div className="flex flex-wrap gap-3 mb-4">
-                    {[
-                      { name: 'React', icon: 'react/react-original' },
-                      { name: 'Node.js', icon: 'nodejs/nodejs-original' },
-                      { name: 'MongoDB', icon: 'mongodb/mongodb-original' },
-                    ].map((tech) => (
-                      <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-f1-red/10 text-white rounded-lg text-sm font-semibold border border-f1-red/20">
-                        <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className="w-4 h-4" alt="" />
-                        {tech.name}
-                      </span>
-                    ))}
-                  </div>
-                  <a href="https://tavisgomotors.lk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-f1-red hover:bg-f1-red-dark text-white rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105 shadow-lg shadow-f1-red/20">
-                    <ExternalLink className="w-4 h-4" />
-                    Visit Live Site
-                  </a>
                 </div>
               </div>
-            </div>
 
+            </ScrollReveal>
             {/* Project 2 — Race 2 */}
-            <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 animate-slide-up animate-delay-200 halo-glow">
-              <div className="grid md:grid-cols-5 gap-0">
-                <div className="md:col-span-3 p-10 order-2 md:order-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Globe className="w-4 h-4 text-f1-red" />
-                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">CORPORATE PLATFORM</span>
+            <ScrollReveal variant="fade-up" delay={100}>
+              <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                <div className="grid md:grid-cols-5 gap-0">
+                  <div className="md:col-span-3 p-10 order-2 md:order-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <Globe className="w-4 h-4 text-f1-red" />
+                      <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">CORPORATE PLATFORM</span>
+                    </div>
+                    <h3 className="text-3xl font-bold text-white mb-4">Oracle Services Corporate Website</h3>
+                    <p className="text-gray-400 text-base leading-relaxed mb-6">
+                      Professional corporate website for Sri Lanka's leading multi-sector service provider,
+                      specializing in security services with 1000+ trained guards operating 24/7
+                      nationwide. Built with Next.js for optimal performance and user experience.
+                    </p>
+                    <div className="flex flex-wrap gap-3 mb-4">
+                      {[
+                        { name: 'Next.js', icon: 'nextjs/nextjs-original', invert: true },
+                        { name: 'React', icon: 'react/react-original' },
+                        { name: 'TypeScript', icon: 'typescript/typescript-original' },
+                      ].map((tech) => (
+                        <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-f1-red/10 text-white rounded-lg text-sm font-semibold border border-f1-red/20">
+                          <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className={`w-4 h-4 ${tech.invert ? 'invert' : ''}`} alt="" />
+                          {tech.name}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-3">
+                      <a href="https://oracleservices.lk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-f1-red hover:bg-f1-red-dark text-white rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105 shadow-lg shadow-f1-red/20">
+                        <ExternalLink className="w-4 h-4" />
+                        Visit Live Site
+                      </a>
+                      <a href="https://github.com/amaannn7/oracle-security.git" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105 border border-white/20">
+                        <Github className="w-4 h-4" />
+                        View Code
+                      </a>
+                    </div>
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-4">Oracle Services Corporate Website</h3>
-                  <p className="text-gray-400 text-base leading-relaxed mb-6">
-                    Professional corporate website for Sri Lanka's leading multi-sector service provider,
-                    specializing in security services with 1000+ trained guards operating 24/7
-                    nationwide. Built with Next.js for optimal performance and user experience.
-                  </p>
-                  <div className="flex flex-wrap gap-3 mb-4">
-                    {[
-                      { name: 'Next.js', icon: 'nextjs/nextjs-original', invert: true },
-                      { name: 'React', icon: 'react/react-original' },
-                      { name: 'TypeScript', icon: 'typescript/typescript-original' },
-                    ].map((tech) => (
-                      <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-f1-red/10 text-white rounded-lg text-sm font-semibold border border-f1-red/20">
-                        <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className={`w-4 h-4 ${tech.invert ? 'invert' : ''}`} alt="" />
-                        {tech.name}
-                      </span>
-                    ))}
+                  <div className="md:col-span-2 relative h-80 md:h-auto bg-gradient-to-br from-f1-red/10 to-black overflow-hidden order-1 md:order-2 flex items-center justify-center">
+                    <img src="/oracle.png" alt="Oracle Services" loading="lazy" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                    <div className="absolute top-6 left-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
+                      RACE 02 &bull; 2025
+                    </div>
+                    <div className="absolute bottom-6 right-6 flex items-center gap-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-f1-green/30">
+                      <div className="w-2 h-2 rounded-full bg-f1-green animate-pulse"></div>
+                      <span className="text-[10px] font-[var(--font-orbitron)] text-f1-green tracking-wider">LIVE</span>
+                    </div>
+                    {/* Dark gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
                   </div>
-                  <div className="flex gap-3">
-                    <a href="https://oracleservices.lk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-f1-red hover:bg-f1-red-dark text-white rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105 shadow-lg shadow-f1-red/20">
-                      <ExternalLink className="w-4 h-4" />
-                      Visit Live Site
-                    </a>
-                    <a href="https://github.com/amaannn7/oracle-security.git" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105 border border-white/20">
-                      <Github className="w-4 h-4" />
-                      View Code
-                    </a>
-                  </div>
-                </div>
-                <div className="md:col-span-2 relative h-80 md:h-auto bg-gradient-to-br from-f1-red/10 to-black overflow-hidden order-1 md:order-2 flex items-center justify-center">
-                  <img src="/oracle.png" alt="Oracle Services" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-                  <div className="absolute top-6 left-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
-                    RACE 02 &bull; 2025
-                  </div>
-                  <div className="absolute bottom-6 right-6 flex items-center gap-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-f1-green/30">
-                    <div className="w-2 h-2 rounded-full bg-f1-green animate-pulse"></div>
-                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-green tracking-wider">LIVE</span>
-                  </div>
-                  {/* Dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
                 </div>
               </div>
-            </div>
 
+            </ScrollReveal>
             {/* Project 3 — Race 3 */}
-            <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 animate-slide-up animate-delay-300 halo-glow">
-              <div className="grid md:grid-cols-5 gap-0">
-                <div className="md:col-span-2 relative h-64 md:h-full bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
-                  <img src="/vocabulary.PNG" alt="AI Vocabulary App" className="h-48 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-                  <div className="absolute top-6 right-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
-                    RACE 03 &bull; 2024
+            <ScrollReveal variant="fade-up" delay={200}>
+              <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                <div className="grid md:grid-cols-5 gap-0">
+                  <div className="md:col-span-2 relative h-64 md:h-full bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
+                    <img src="/vocabulary.PNG" alt="AI Vocabulary App" loading="lazy" className="h-48 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                    <div className="absolute top-6 right-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
+                      RACE 03 &bull; 2024
+                    </div>
+                    <div className="absolute bottom-6 left-6 flex items-center gap-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-f1-green/30">
+                      <div className="w-2 h-2 rounded-full bg-f1-green animate-pulse"></div>
+                      <span className="text-[10px] font-[var(--font-orbitron)] text-f1-green tracking-wider">LIVE</span>
+                    </div>
+                    {/* Dark gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
                   </div>
-                  <div className="absolute bottom-6 left-6 flex items-center gap-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-f1-green/30">
-                    <div className="w-2 h-2 rounded-full bg-f1-green animate-pulse"></div>
-                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-green tracking-wider">LIVE</span>
-                  </div>
-                  {/* Dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
-                </div>
-                <div className="md:col-span-3 p-10">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Zap className="w-4 h-4 text-f1-red" />
-                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">MOBILE + AI POWERED</span>
-                  </div>
-                  <h3 className="text-3xl font-bold text-white mb-4">AI Vocabulary Learning App</h3>
-                  <p className="text-gray-400 text-base leading-relaxed mb-6">
-                    Mobile-first learning platform with AI-powered personalization, gamified quizzes,
-                    and adaptive learning paths. Features intelligent spaced repetition for enhanced
-                    vocabulary retention and learning efficiency.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    {[
-                      { name: 'Flutter', icon: 'flutter/flutter-original' },
-                      { name: 'Express', icon: 'express/express-original', invert: true },
-                      { name: 'MySQL', icon: 'mysql/mysql-original' },
-                    ].map((tech) => (
-                      <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-f1-red/10 text-white rounded-lg text-sm font-semibold border border-f1-red/20">
-                        <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className={`w-4 h-4 ${tech.invert ? 'invert' : ''}`} alt="" />
-                        {tech.name}
+                  <div className="md:col-span-3 p-10">
+                    <div className="flex items-center gap-3 mb-2">
+                      <Zap className="w-4 h-4 text-f1-red" />
+                      <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">MOBILE + AI POWERED</span>
+                    </div>
+                    <h3 className="text-3xl font-bold text-white mb-4">AI Vocabulary Learning App</h3>
+                    <p className="text-gray-400 text-base leading-relaxed mb-6">
+                      Mobile-first learning platform with AI-powered personalization, gamified quizzes,
+                      and adaptive learning paths. Features intelligent spaced repetition for enhanced
+                      vocabulary retention and learning efficiency.
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {[
+                        { name: 'Flutter', icon: 'flutter/flutter-original' },
+                        { name: 'Express', icon: 'express/express-original', invert: true },
+                        { name: 'MySQL', icon: 'mysql/mysql-original' },
+                      ].map((tech) => (
+                        <span key={tech.name} className="flex items-center gap-2 px-4 py-2 bg-f1-red/10 text-white rounded-lg text-sm font-semibold border border-f1-red/20">
+                          <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}.svg`} className={`w-4 h-4 ${tech.invert ? 'invert' : ''}`} alt="" />
+                          {tech.name}
+                        </span>
+                      ))}
+                      <span className="px-4 py-2 bg-f1-red/10 text-white rounded-lg text-sm font-semibold border border-f1-red/20">
+                        AI/ML
                       </span>
-                    ))}
-                    <span className="px-4 py-2 bg-f1-red/10 text-white rounded-lg text-sm font-semibold border border-f1-red/20">
-                      AI/ML
-                    </span>
-                  </div>
-                  <div className="flex gap-3 mt-4">
-                    <a href="https://lexfy.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-f1-red hover:bg-f1-red-dark text-white rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105 shadow-lg shadow-f1-red/20">
-                      <ExternalLink className="w-4 h-4" />
-                      Visit Live Site
-                    </a>
-                    <a href="https://github.com/amaannn7/lexfy-vocabulary-enhancement-app.git" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105 border border-white/20">
-                      <Github className="w-4 h-4" />
-                      View Code
-                    </a>
+                    </div>
+                    <div className="flex gap-3 mt-4">
+                      <a href="https://lexfy.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-f1-red hover:bg-f1-red-dark text-white rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105 shadow-lg shadow-f1-red/20">
+                        <ExternalLink className="w-4 h-4" />
+                        Visit Live Site
+                      </a>
+                      <a href="https://github.com/amaannn7/lexfy-vocabulary-enhancement-app.git" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105 border border-white/20">
+                        <Github className="w-4 h-4" />
+                        View Code
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div></ScrollReveal>
           </div>
         </div>
       </section>
@@ -764,7 +793,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="w-28 shrink-0 bg-black/30 flex items-center justify-center p-3">
-                        <img src="/vocabulary.PNG" alt="Lexfy" className="w-full h-auto object-contain rounded-lg opacity-90" />
+                        <img src="/vocabulary.PNG" alt="Lexfy" loading="lazy" className="w-full h-auto object-contain rounded-lg opacity-90" />
                       </div>
                     </div>
                   </div>
@@ -787,7 +816,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="w-28 shrink-0 bg-black/30 flex items-center justify-center p-3">
-                        <img src="/helmet.png" alt="Helmet Store" className="w-full h-auto object-contain rounded-lg opacity-90" />
+                        <img src="/helmet.png" alt="Helmet Store" loading="lazy" className="w-full h-auto object-contain rounded-lg opacity-90" />
                       </div>
                     </div>
                   </div>
@@ -813,7 +842,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="w-28 shrink-0 bg-black/30 flex items-center justify-center p-3">
-                        <img src="/oracle.png" alt="Oracle Services" className="w-full h-auto object-contain rounded-lg opacity-90" />
+                        <img src="/oracle.png" alt="Oracle Services" loading="lazy" className="w-full h-auto object-contain rounded-lg opacity-90" />
                       </div>
                     </div>
                   </div>
