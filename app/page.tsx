@@ -31,6 +31,10 @@ export default function Home() {
             <span className="hidden sm:block ml-2 px-2 py-0.5 text-[10px] font-bold tracking-widest bg-f1-red/20 text-f1-red border border-f1-red/30 rounded font-[var(--font-orbitron)]">
               P1
             </span>
+            <div className="hidden sm:flex items-center gap-1.5 ml-3 px-2.5 py-1 bg-f1-green/5 border border-f1-green/20 rounded-full">
+              <div className="w-1.5 h-1.5 rounded-full bg-f1-green led-blink"></div>
+              <span className="text-[9px] font-[var(--font-orbitron)] text-f1-green tracking-wider">AVAILABLE</span>
+            </div>
           </div>
 
           {/* Nav links styled as sector markers */}
@@ -53,13 +57,15 @@ export default function Home() {
       </nav>
 
       {/* ===== HERO SECTION — STARTING GRID ===== */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden diagonal-bg">
         {/* Background race number watermark */}
         <div className="absolute right-[-5%] top-1/2 -translate-y-1/2 text-[25rem] font-[var(--font-orbitron)] font-black text-white/[0.02] select-none leading-none pointer-events-none">
           07
         </div>
         {/* Racing stripe accents */}
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-f1-red/30 to-transparent"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-f1-red/20 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-f1-red/25 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
           {/* Profile Image — Driver Card */}
@@ -188,7 +194,7 @@ export default function Home() {
 
               {/* Driver data card */}
               <div className="space-y-3 animate-slide-right animate-delay-200">
-                <div className="bg-f1-carbon-light border border-f1-red/20 rounded-xl p-1">
+                <div className="bg-f1-carbon-light border border-f1-red/20 rounded-xl p-1 scan-overlay">
                   <div className="bg-f1-red/10 border border-f1-red/10 rounded-lg px-4 py-2 flex items-center justify-between">
                     <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">DRIVER DATA</span>
                     <span className="text-[10px] font-[var(--font-orbitron)] text-gray-500">2026 SEASON</span>
@@ -319,6 +325,15 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+                <div className="mt-5 pt-4 border-t border-white/5">
+                  <div className="flex justify-between items-center mb-1.5">
+                    <span className="text-[9px] font-[var(--font-orbitron)] text-gray-600 tracking-[0.2em]">PROFICIENCY</span>
+                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red font-bold">85%</span>
+                  </div>
+                  <div className="h-[3px] bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-f1-red to-f1-red/50 rounded-full telemetry-bar" style={{ '--fill-width': '85%' } as React.CSSProperties} />
+                  </div>
+                </div>
               </div></ScrollReveal>
             {/* Backend */}
             <ScrollReveal variant="fade-up" delay={80}>
@@ -346,6 +361,15 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+                <div className="mt-5 pt-4 border-t border-white/5">
+                  <div className="flex justify-between items-center mb-1.5">
+                    <span className="text-[9px] font-[var(--font-orbitron)] text-gray-600 tracking-[0.2em]">PROFICIENCY</span>
+                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red font-bold">80%</span>
+                  </div>
+                  <div className="h-[3px] bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-f1-red to-f1-red/50 rounded-full telemetry-bar" style={{ '--fill-width': '80%' } as React.CSSProperties} />
+                  </div>
+                </div>
               </div></ScrollReveal>
             {/* Mobile */}
             <ScrollReveal variant="fade-up" delay={160}>
@@ -364,6 +388,15 @@ export default function Home() {
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" className="w-5 h-5" alt="Flutter" />
                     Flutter
                   </span>
+                </div>
+                <div className="mt-5 pt-4 border-t border-white/5">
+                  <div className="flex justify-between items-center mb-1.5">
+                    <span className="text-[9px] font-[var(--font-orbitron)] text-gray-600 tracking-[0.2em]">PROFICIENCY</span>
+                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red font-bold">75%</span>
+                  </div>
+                  <div className="h-[3px] bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-f1-red to-f1-red/50 rounded-full telemetry-bar" style={{ '--fill-width': '75%' } as React.CSSProperties} />
+                  </div>
                 </div>
               </div></ScrollReveal>
             {/* Databases */}
@@ -391,6 +424,15 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+                <div className="mt-5 pt-4 border-t border-white/5">
+                  <div className="flex justify-between items-center mb-1.5">
+                    <span className="text-[9px] font-[var(--font-orbitron)] text-gray-600 tracking-[0.2em]">PROFICIENCY</span>
+                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red font-bold">78%</span>
+                  </div>
+                  <div className="h-[3px] bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-f1-red to-f1-red/50 rounded-full telemetry-bar" style={{ '--fill-width': '78%' } as React.CSSProperties} />
+                  </div>
+                </div>
               </div></ScrollReveal>
             {/* Cloud */}
             <ScrollReveal variant="fade-up" delay={80}>
@@ -415,6 +457,15 @@ export default function Home() {
                       {tech.name}
                     </span>
                   ))}
+                </div>
+                <div className="mt-5 pt-4 border-t border-white/5">
+                  <div className="flex justify-between items-center mb-1.5">
+                    <span className="text-[9px] font-[var(--font-orbitron)] text-gray-600 tracking-[0.2em]">PROFICIENCY</span>
+                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red font-bold">68%</span>
+                  </div>
+                  <div className="h-[3px] bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-f1-red to-f1-red/50 rounded-full telemetry-bar" style={{ '--fill-width': '68%' } as React.CSSProperties} />
+                  </div>
                 </div>
               </div></ScrollReveal>
             {/* Tools */}
@@ -441,6 +492,15 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+                <div className="mt-5 pt-4 border-t border-white/5">
+                  <div className="flex justify-between items-center mb-1.5">
+                    <span className="text-[9px] font-[var(--font-orbitron)] text-gray-600 tracking-[0.2em]">PROFICIENCY</span>
+                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red font-bold">90%</span>
+                  </div>
+                  <div className="h-[3px] bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-f1-red to-f1-red/50 rounded-full telemetry-bar" style={{ '--fill-width': '90%' } as React.CSSProperties} />
+                  </div>
+                </div>
               </div></ScrollReveal>
           </div>
         </div>
@@ -466,6 +526,7 @@ export default function Home() {
             {/* Project 1 — Race 1 */}
             <ScrollReveal variant="fade-up" delay={0}>
               <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                <div className="card-accent-bar w-full"></div>
                 <div className="grid md:grid-cols-5 gap-0">
                   <div className="md:col-span-2 relative h-80 md:h-auto bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
                     <img src="/helmet.png" alt="Helmet Store" loading="lazy" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
@@ -516,6 +577,7 @@ export default function Home() {
             {/* Project 2 — Race 2 */}
             <ScrollReveal variant="fade-up" delay={100}>
               <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                <div className="card-accent-bar w-full"></div>
                 <div className="grid md:grid-cols-5 gap-0">
                   <div className="md:col-span-3 p-10 order-2 md:order-1">
                     <div className="flex items-center gap-3 mb-2">
@@ -570,6 +632,7 @@ export default function Home() {
             {/* Project 3 — Race 3 */}
             <ScrollReveal variant="fade-up" delay={200}>
               <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
+                <div className="card-accent-bar w-full"></div>
                 <div className="grid md:grid-cols-5 gap-0">
                   <div className="md:col-span-2 relative h-64 md:h-full bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
                     <img src="/vocabulary.PNG" alt="AI Vocabulary App" loading="lazy" className="h-48 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />

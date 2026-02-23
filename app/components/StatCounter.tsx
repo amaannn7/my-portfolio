@@ -31,6 +31,7 @@ export default function StatCounter({ to, suffix = '', duration = 1800, classNam
                         const eased = 1 - Math.pow(1 - progress, 3);
                         setCount(Math.round(eased * to));
                         if (progress < 1) requestAnimationFrame(tick);
+                        
                     };
 
                     requestAnimationFrame(tick);
@@ -49,4 +50,11 @@ export default function StatCounter({ to, suffix = '', duration = 1800, classNam
             {count}{suffix}
         </span>
     );
+    
+    return (
+        <span ref={ref} className={className}>
+            {count}{suffix}
+        
+        </span>
+    )
 }

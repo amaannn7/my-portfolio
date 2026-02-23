@@ -245,8 +245,56 @@ body {
 }
 
 /* ===== HALO GLOW ON HOVER ===== */
+.halo-glow {
+  position: relative;
+}
+
+.halo-glow::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 14px;
+  height: 14px;
+  border-top: 1.5px solid transparent;
+  border-left: 1.5px solid transparent;
+  border-radius: 2px 0 0 0;
+  transition: width 0.4s ease, height 0.4s ease, border-top-color 0.4s ease, border-left-color 0.4s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.halo-glow::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 14px;
+  height: 14px;
+  border-bottom: 1.5px solid transparent;
+  border-right: 1.5px solid transparent;
+  border-radius: 0 0 2px 0;
+  transition: width 0.4s ease, height 0.4s ease, border-bottom-color 0.4s ease, border-right-color 0.4s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
 .halo-glow:hover {
   box-shadow: 0 0 30px rgba(225, 6, 0, 0.25), inset 0 0 30px rgba(225, 6, 0, 0.05);
+}
+
+.halo-glow:hover::before {
+  width: 26px;
+  height: 26px;
+  border-top-color: rgba(225, 6, 0, 0.9);
+  border-left-color: rgba(225, 6, 0, 0.9);
+}
+
+.halo-glow:hover::after {
+  width: 26px;
+  height: 26px;
+  border-bottom-color: rgba(225, 6, 0, 0.9);
+  border-right-color: rgba(225, 6, 0, 0.9);
 }
 
 /* ===== CHECKERED FLAG LINE ===== */
@@ -531,4 +579,206 @@ body {
 .sr-visible {
   opacity: 1 !important;
   transform: none !important;
+}
+
+/* ===== HUD CORNER BRACKETS ===== */
+.hud-frame {
+  position: relative;
+}
+
+.hud-frame::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 16px;
+  height: 16px;
+  border-top: 2px solid #E10600;
+  border-left: 2px solid #E10600;
+  border-radius: 2px 0 0 0;
+  opacity: 0.5;
+  transition: width 0.35s ease, height 0.35s ease, opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.hud-frame::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 16px;
+  height: 16px;
+  border-bottom: 2px solid #E10600;
+  border-right: 2px solid #E10600;
+  border-radius: 0 0 2px 0;
+  opacity: 0.5;
+  transition: width 0.35s ease, height 0.35s ease, opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.hud-frame:hover::before,
+.hud-frame:hover::after {
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+}
+
+/* ===== SCAN LINE OVERLAY ===== */
+@keyframes scanLine {
+  0% {
+    top: -50%;
+  }
+
+  100% {
+    top: 110%;
+  }
+}
+
+.scan-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-overlay::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 45%;
+  top: -45%;
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(225, 6, 0, 0.035) 40%,
+      rgba(225, 6, 0, 0.065) 50%,
+      rgba(225, 6, 0, 0.035) 60%,
+      transparent 100%);
+  animation: scanLine 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== DIAGONAL DRIFT BACKGROUND ===== */
+@keyframes diagonalDrift {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 80px 80px;
+  }
+}
+
+.diagonal-bg {
+  background-image: repeating-linear-gradient(-55deg,
+      transparent 0px,
+      transparent 28px,
+      rgba(225, 6, 0, 0.013) 28px,
+      rgba(225, 6, 0, 0.013) 30px);
+  animation: diagonalDrift 8s linear infinite;
+}
+
+/* ===== ORBIT RINGS ===== */
+@keyframes orbitSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(225, 6, 0, 0.18);
+  animation: orbitSpin 14s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orbit-ring-2 {
+  border-color: rgba(225, 6, 0, 0.1);
+  border-style: solid;
+  border-width: 1px;
+  animation-direction: reverse;
+  animation-duration: 20s;
+}
+
+/* ===== LED STATUS BLINK ===== */
+@keyframes ledBlink {
+
+  0%,
+  86%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 5px #00D2BE, 0 0 10px rgba(0, 210, 190, 0.4);
+  }
+
+  91% {
+    opacity: 0.15;
+    box-shadow: none;
+  }
+}
+
+.led-blink {
+  animation: ledBlink 3.5s ease-in-out infinite;
+}
+
+/* ===== ANIMATED CARD TOP ACCENT ===== */
+@keyframes accentPulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.card-accent-bar {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #E10600, #E10600 60%, transparent);
+  animation: accentPulse 3s ease-in-out infinite;
+}
+
+/* ===== SPEED BLUR LINES (SECTION DIVIDER) ===== */
+.speed-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+.speed-divider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg,
+      transparent 0px,
+      transparent 60px,
+      rgba(225, 6, 0, 0.06) 60px,
+      rgba(225, 6, 0, 0.06) 61px);
+  pointer-events: none;
+}
+
+/* ===== TACHOMETER ARC DECORATION ===== */
+@keyframes arcSweep {
+  0% {
+    stroke-dashoffset: 280;
+  }
+
+  60% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.tach-arc {
+  stroke-dasharray: 280;
+  stroke-dashoffset: 280;
+  animation: arcSweep 2s ease-out 0.5s forwards;
 }
