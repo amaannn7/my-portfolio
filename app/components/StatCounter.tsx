@@ -49,12 +49,6 @@ export default function StatCounter({ to, suffix = '', duration = 1800, classNam
         <span ref={ref} className={className}>
             {count}{suffix}
         </span>
+
     );
-    
-    return (
-        <span ref={ref} className={className}>
-            {count}{suffix}
-        
-        </span>
-    )
 }

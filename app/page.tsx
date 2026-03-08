@@ -5,6 +5,7 @@ import BackToTop from './components/BackToTop';
 import TypingEffect from './components/TypingEffect';
 import ScrollReveal from './components/ScrollReveal';
 import StatCounter from './components/StatCounter';
+import MobileNav from './components/MobileNav';
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
 
       {/* ===== NAVIGATION — RACE CONTROL BAR ===== */}
       <nav className="fixed top-0 w-full backdrop-blur-xl bg-black/80 border-b border-f1-red/20 z-50 animate-slide-down">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex justify-between items-center">
           {/* Driver tag */}
           <div className="flex items-center gap-3">
             <div className="w-1.5 h-8 bg-f1-red rounded-full"></div>
@@ -37,8 +38,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Nav links styled as sector markers */}
-          <div className="flex gap-6 items-center">
+          {/* Desktop nav links */}
+          <div className="hidden md:flex gap-6 items-center">
             {['About', 'Skills', 'Projects', 'Contact'].map((item, i) => (
               <a
                 key={item}
@@ -51,13 +52,15 @@ export default function Home() {
               </a>
             ))}
           </div>
+          {/* Mobile hamburger */}
+          <MobileNav />
         </div>
         {/* Thin red racing line under nav */}
         <div className="h-[2px] bg-gradient-to-r from-transparent via-f1-red to-transparent opacity-50"></div>
       </nav>
 
       {/* ===== HERO SECTION — STARTING GRID ===== */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden diagonal-bg">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 md:pt-24 relative overflow-hidden diagonal-bg">
         {/* Background race number watermark */}
         <div className="absolute right-[-5%] top-1/2 -translate-y-1/2 text-[25rem] font-[var(--font-orbitron)] font-black text-white/[0.02] select-none leading-none pointer-events-none">
           07
@@ -67,12 +70,12 @@ export default function Home() {
         <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-f1-red/20 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-f1-red/25 to-transparent"></div>
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
           {/* Profile Image — Driver Card */}
           <div className="flex justify-center md:justify-end animate-scale-in order-2 md:order-1">
             <div className="relative group">
               {/* DRS glow frame */}
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-2xl border-2 border-f1-red/30 overflow-hidden drs-glow group-hover:border-f1-red/60 transition-all duration-500 bg-gradient-to-br from-f1-carbon-light to-black">
+              <div className="w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-2xl border-2 border-f1-red/30 overflow-hidden drs-glow group-hover:border-f1-red/60 transition-all duration-500 bg-gradient-to-br from-f1-carbon-light to-black">
                 <img
                   src="/profile.jpg"
                   alt="Amaan Yusuf"
@@ -94,7 +97,7 @@ export default function Home() {
           </div>
 
           {/* Hero Text — Race Start */}
-          <div className="text-center md:text-left space-y-8 order-1 md:order-2">
+          <div className="text-center md:text-left space-y-5 md:space-y-8 order-1 md:order-2">
             {/* Start lights */}
             <div className="flex gap-3 justify-center md:justify-start animate-fade-in">
               {[1, 2, 3, 4, 5].map((light) => (
@@ -106,7 +109,7 @@ export default function Home() {
               <p className="text-sm font-[var(--font-orbitron)] text-f1-red tracking-[0.3em] uppercase animate-fade-in">
                 SOFTWARE ENGINEER
               </p>
-              <h1 className="text-7xl md:text-9xl font-black tracking-tighter animate-slide-up leading-[0.85]">
+              <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tighter animate-slide-up leading-[0.85]">
                 <span className="bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
                   AMAAN
                 </span>
@@ -132,7 +135,7 @@ export default function Home() {
               Clean code. Peak performance. Podium-worthy results.
             </p>
 
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start animate-scale-in animate-delay-400">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 justify-center md:justify-start animate-scale-in animate-delay-400">
               <a
                 href="#projects"
                 className="overtake-btn px-8 py-4 bg-f1-red hover:bg-f1-red-dark text-white rounded-lg font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-f1-red/30 tracking-wider uppercase font-[var(--font-orbitron)]"
@@ -161,14 +164,14 @@ export default function Home() {
       </section>
 
       {/* ===== ABOUT SECTION — DRIVER PROFILE ===== */}
-      <section id="about" className="py-32 px-6 border-t border-f1-red/10 relative">
+      <section id="about" className="py-16 md:py-32 px-4 sm:px-6 border-t border-f1-red/10 relative">
         {/* Checkered line */}
         <div className="checkered-line w-full absolute top-0 left-0"></div>
 
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
             <Flag className="w-8 h-8 text-f1-red" />
-            <h2 className="text-5xl font-bold animate-slide-right">
+            <h2 className="text-3xl md:text-5xl font-bold animate-slide-right">
               <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent font-[var(--font-orbitron)]">
                 DRIVER PROFILE
               </span>
@@ -249,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* ===== TECH STACK MARQUEE — PIT LANE ===== */}
-      <section className="py-20 border-t border-f1-red/10 overflow-hidden relative">
+      <section className="py-16 border-t border-f1-red/10 overflow-hidden relative">
         <div className="mb-12">
           <p className="text-center text-xs font-[var(--font-orbitron)] text-f1-red/70 tracking-[0.4em] uppercase">
             &#9873; PIT LANE &mdash; TECHNOLOGIES I RACE WITH &#9873;
@@ -285,13 +288,13 @@ export default function Home() {
       </section>
 
       {/* ===== SKILLS SECTION — RACE TELEMETRY ===== */}
-      <section id="skills" className="py-32 px-6 border-t border-f1-red/10 relative">
+      <section id="skills" className="py-16 md:py-32 px-4 sm:px-6 border-t border-f1-red/10 relative">
         <div className="checkered-line w-full absolute top-0 left-0"></div>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-2">
               <Gauge className="w-8 h-8 text-f1-red" />
-              <h2 className="text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
+              <h2 className="text-3xl md:text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
                 <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent">
                   SKILLS
                 </span>
@@ -303,10 +306,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Frontend */}
             <ScrollReveal variant="fade-up" delay={0}>
-              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-5 md:p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                    <Monitor className="w-7 h-7 text-f1-red" />
+                  <div className="p-3 md:p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Monitor className="w-6 h-6 md:w-7 md:h-7 text-f1-red" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Frontend</h3>
@@ -337,10 +340,10 @@ export default function Home() {
               </div></ScrollReveal>
             {/* Backend */}
             <ScrollReveal variant="fade-up" delay={80}>
-              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-5 md:p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                    <Server className="w-7 h-7 text-f1-red" />
+                  <div className="p-3 md:p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Server className="w-6 h-6 md:w-7 md:h-7 text-f1-red" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Backend</h3>
@@ -373,10 +376,10 @@ export default function Home() {
               </div></ScrollReveal>
             {/* Mobile */}
             <ScrollReveal variant="fade-up" delay={160}>
-              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-5 md:p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                    <Smartphone className="w-7 h-7 text-f1-red" />
+                  <div className="p-3 md:p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Smartphone className="w-6 h-6 md:w-7 md:h-7 text-f1-red" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Mobile</h3>
@@ -401,10 +404,10 @@ export default function Home() {
               </div></ScrollReveal>
             {/* Databases */}
             <ScrollReveal variant="fade-up" delay={0}>
-              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-5 md:p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                    <Database className="w-7 h-7 text-f1-red" />
+                  <div className="p-3 md:p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Database className="w-6 h-6 md:w-7 md:h-7 text-f1-red" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Databases</h3>
@@ -436,10 +439,10 @@ export default function Home() {
               </div></ScrollReveal>
             {/* Cloud */}
             <ScrollReveal variant="fade-up" delay={80}>
-              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-5 md:p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                    <Cloud className="w-7 h-7 text-f1-red" />
+                  <div className="p-3 md:p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Cloud className="w-6 h-6 md:w-7 md:h-7 text-f1-red" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Cloud</h3>
@@ -470,10 +473,10 @@ export default function Home() {
               </div></ScrollReveal>
             {/* Tools */}
             <ScrollReveal variant="fade-up" delay={160}>
-              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
+              <div className="bg-f1-carbon-light/80 border border-f1-red/15 rounded-2xl p-5 md:p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-[1.02] group halo-glow">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
-                    <Wrench className="w-7 h-7 text-f1-red" />
+                  <div className="p-3 md:p-4 bg-f1-red/10 rounded-xl group-hover:bg-f1-red/20 transition-all duration-300 border border-f1-red/20">
+                    <Wrench className="w-6 h-6 md:w-7 md:h-7 text-f1-red" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Tools</h3>
@@ -507,13 +510,13 @@ export default function Home() {
       </section>
 
       {/* ===== PROJECTS SECTION — GRAND PRIX RESULTS ===== */}
-      <section id="projects" className="py-32 px-6 border-t border-f1-red/10 relative">
+      <section id="projects" className="py-16 md:py-32 px-4 sm:px-6 border-t border-f1-red/10 relative">
         <div className="checkered-line w-full absolute top-0 left-0"></div>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-2">
               <Trophy className="w-8 h-8 text-f1-red" />
-              <h2 className="text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
+              <h2 className="text-3xl md:text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
                 <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent">
                   PROJECTS
                 </span>
@@ -528,7 +531,7 @@ export default function Home() {
               <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
                 <div className="card-accent-bar w-full"></div>
                 <div className="grid md:grid-cols-5 gap-0">
-                  <div className="md:col-span-2 relative h-80 md:h-auto bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
+                  <div className="md:col-span-2 relative h-52 md:h-auto bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
                     <img src="/helmet.png" alt="Helmet Store" loading="lazy" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                     {/* Race position badge */}
                     <div className="absolute top-6 right-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
@@ -542,12 +545,12 @@ export default function Home() {
                     {/* Dark gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
                   </div>
-                  <div className="md:col-span-3 p-10">
+                  <div className="md:col-span-3 p-5 md:p-10">
                     <div className="flex items-center gap-3 mb-2">
                       <Timer className="w-4 h-4 text-f1-red" />
                       <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">FULL-STACK APPLICATION</span>
                     </div>
-                    <h3 className="text-3xl font-bold text-white mb-4">E-Commerce Helmet Store</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">E-Commerce Helmet Store</h3>
                     <p className="text-gray-400 text-base leading-relaxed mb-6">
                       Full-stack e-commerce platform featuring secure payment integration, comprehensive
                       admin dashboard, and real-time inventory management. Built with modern technologies
@@ -579,12 +582,12 @@ export default function Home() {
               <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
                 <div className="card-accent-bar w-full"></div>
                 <div className="grid md:grid-cols-5 gap-0">
-                  <div className="md:col-span-3 p-10 order-2 md:order-1">
+                  <div className="md:col-span-3 p-5 md:p-10 order-2 md:order-1">
                     <div className="flex items-center gap-3 mb-2">
                       <Globe className="w-4 h-4 text-f1-red" />
                       <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">CORPORATE PLATFORM</span>
                     </div>
-                    <h3 className="text-3xl font-bold text-white mb-4">Oracle Services Corporate Website</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Oracle Services Corporate Website</h3>
                     <p className="text-gray-400 text-base leading-relaxed mb-6">
                       Professional corporate website for Sri Lanka's leading multi-sector service provider,
                       specializing in security services with 1000+ trained guards operating 24/7
@@ -613,7 +616,7 @@ export default function Home() {
                       </a>
                     </div>
                   </div>
-                  <div className="md:col-span-2 relative h-80 md:h-auto bg-gradient-to-br from-f1-red/10 to-black overflow-hidden order-1 md:order-2 flex items-center justify-center">
+                  <div className="md:col-span-2 relative h-52 md:h-auto bg-gradient-to-br from-f1-red/10 to-black overflow-hidden order-1 md:order-2 flex items-center justify-center">
                     <img src="/oracle.png" alt="Oracle Services" loading="lazy" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                     <div className="absolute top-6 left-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
                       RACE 02 &bull; 2025
@@ -634,7 +637,7 @@ export default function Home() {
               <div className="group bg-f1-carbon-light/50 border border-f1-red/15 rounded-3xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
                 <div className="card-accent-bar w-full"></div>
                 <div className="grid md:grid-cols-5 gap-0">
-                  <div className="md:col-span-2 relative h-64 md:h-full bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
+                  <div className="md:col-span-2 relative h-52 md:h-full bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
                     <img src="/vocabulary.PNG" alt="AI Vocabulary App" loading="lazy" className="h-48 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                     <div className="absolute top-6 right-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
                       RACE 03 &bull; 2024
@@ -646,12 +649,12 @@ export default function Home() {
                     {/* Dark gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
                   </div>
-                  <div className="md:col-span-3 p-10">
+                  <div className="md:col-span-3 p-5 md:p-10">
                     <div className="flex items-center gap-3 mb-2">
                       <Zap className="w-4 h-4 text-f1-red" />
                       <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">MOBILE + AI POWERED</span>
                     </div>
-                    <h3 className="text-3xl font-bold text-white mb-4">AI Vocabulary Learning App</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">AI Vocabulary Learning App</h3>
                     <p className="text-gray-400 text-base leading-relaxed mb-6">
                       Mobile-first learning platform with AI-powered personalization, gamified quizzes,
                       and adaptive learning paths. Features intelligent spaced repetition for enhanced
@@ -690,14 +693,14 @@ export default function Home() {
       </section>
 
       {/* ===== EXPERIENCE & EDUCATION — CAREER STANDINGS ===== */}
-      <section className="py-32 px-6 border-t border-f1-red/10 relative">
+      <section className="py-16 md:py-32 px-4 sm:px-6 border-t border-f1-red/10 relative">
         <div className="checkered-line w-full absolute top-0 left-0"></div>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16">
           {/* Experience — Race History */}
           <div className="animate-slide-right animate-delay-100">
             <div className="flex items-center gap-3 mb-10">
               <div className="w-1.5 h-8 bg-f1-red rounded-full"></div>
-              <h2 className="text-4xl font-bold font-[var(--font-orbitron)]">
+              <h2 className="text-2xl md:text-4xl font-bold font-[var(--font-orbitron)]">
                 <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent">
                   EXPERIENCE
                 </span>
@@ -705,12 +708,12 @@ export default function Home() {
             </div>
             <div className="bg-f1-carbon-light border border-f1-red/20 rounded-2xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
               {/* Header strip */}
-              <div className="bg-f1-red/10 border-b border-f1-red/20 px-6 py-3 flex items-center justify-between">
+              <div className="bg-f1-red/10 border-b border-f1-red/20 px-4 md:px-6 py-3 flex items-center justify-between">
                 <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">EXPERIENCE LOG</span>
                 <span className="text-[10px] font-[var(--font-orbitron)] text-gray-500">2025</span>
               </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-2">Summer Intern</h3>
+              <div className="p-5 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Summer Intern</h3>
                 <p className="text-f1-red font-semibold mb-1 text-sm">Rizing (A Wipro Company)</p>
                 <p className="text-gray-500 mb-6 text-xs font-[var(--font-orbitron)] tracking-wider">JUL 2025 — AUG 2025</p>
                 <ul className="space-y-3 text-gray-300 text-sm">
@@ -735,7 +738,7 @@ export default function Home() {
           <div className="animate-slide-left animate-delay-200">
             <div className="flex items-center gap-3 mb-10">
               <div className="w-1.5 h-8 bg-f1-red rounded-full"></div>
-              <h2 className="text-4xl font-bold font-[var(--font-orbitron)]">
+              <h2 className="text-2xl md:text-4xl font-bold font-[var(--font-orbitron)]">
                 <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent">
                   EDUCATION
                 </span>
@@ -772,13 +775,13 @@ export default function Home() {
       </section>
 
       {/* ===== CAREER TIMELINE ===== */}
-      <section className="py-32 px-6 border-t border-f1-red/10 relative">
+      <section className="py-16 md:py-32 px-4 sm:px-6 border-t border-f1-red/10 relative">
         <div className="checkered-line w-full absolute top-0 left-0"></div>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-2">
               <Flag className="w-8 h-8 text-f1-red" />
-              <h2 className="text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
+              <h2 className="text-3xl md:text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
                 <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent">
                   TIMELINE
                 </span>
@@ -787,7 +790,7 @@ export default function Home() {
             <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-[0.3em]">CAREER JOURNEY</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* ── Career column ── */}
             <div>
               <div className="flex items-center gap-3 mb-8">
@@ -855,7 +858,7 @@ export default function Home() {
                           </a>
                         </div>
                       </div>
-                      <div className="w-28 shrink-0 bg-black/30 flex items-center justify-center p-3">
+                      <div className="hidden sm:flex w-24 md:w-28 shrink-0 bg-black/30 items-center justify-center p-3">
                         <img src="/vocabulary.PNG" alt="Lexfy" loading="lazy" className="w-full h-auto object-contain rounded-lg opacity-90" />
                       </div>
                     </div>
@@ -878,7 +881,7 @@ export default function Home() {
                           </a>
                         </div>
                       </div>
-                      <div className="w-28 shrink-0 bg-black/30 flex items-center justify-center p-3">
+                      <div className="hidden sm:flex w-24 md:w-28 shrink-0 bg-black/30 items-center justify-center p-3">
                         <img src="/helmet.png" alt="Helmet Store" loading="lazy" className="w-full h-auto object-contain rounded-lg opacity-90" />
                       </div>
                     </div>
@@ -904,7 +907,7 @@ export default function Home() {
                           </a>
                         </div>
                       </div>
-                      <div className="w-28 shrink-0 bg-black/30 flex items-center justify-center p-3">
+                      <div className="hidden sm:flex w-24 md:w-28 shrink-0 bg-black/30 items-center justify-center p-3">
                         <img src="/oracle.png" alt="Oracle Services" loading="lazy" className="w-full h-auto object-contain rounded-lg opacity-90" />
                       </div>
                     </div>
@@ -917,12 +920,12 @@ export default function Home() {
       </section>
 
       {/* ===== CONTACT SECTION — TEAM RADIO ===== */}
-      <section id="contact" className="py-32 px-6 border-t border-f1-red/10 relative">
+      <section id="contact" className="py-16 md:py-32 px-4 sm:px-6 border-t border-f1-red/10 relative">
         <div className="checkered-line w-full absolute top-0 left-0"></div>
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
             <Radio className="w-8 h-8 text-f1-red" />
-            <h2 className="text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
+              <h2 className="text-3xl md:text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
               <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent">
                 CONTACT
               </span>
@@ -937,7 +940,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <a
               href="mailto:amaan.yusuf4522@gmail.com"
-              className="bg-f1-carbon-light border border-f1-red/20 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-105 animate-slide-right animate-delay-300 group halo-glow"
+              className="bg-f1-carbon-light border border-f1-red/20 rounded-2xl p-6 md:p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-105 animate-slide-right animate-delay-300 group halo-glow"
             >
               <Mail className="w-8 h-8 text-f1-red mb-4 mx-auto group-hover:scale-110 transition-transform" />
               <p className="text-white font-bold mb-2 font-[var(--font-orbitron)] tracking-wider">EMAIL</p>
@@ -946,7 +949,7 @@ export default function Home() {
 
             <a
               href="tel:+94702009436"
-              className="bg-f1-carbon-light border border-f1-red/20 rounded-2xl p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-105 animate-slide-left animate-delay-400 group halo-glow"
+              className="bg-f1-carbon-light border border-f1-red/20 rounded-2xl p-6 md:p-8 hover:border-f1-red/50 transition-all duration-500 hover:scale-105 animate-slide-left animate-delay-400 group halo-glow"
             >
               <Phone className="w-8 h-8 text-f1-red mb-4 mx-auto group-hover:scale-110 transition-transform" />
               <p className="text-white font-bold mb-2 font-[var(--font-orbitron)] tracking-wider">PHONE</p>
