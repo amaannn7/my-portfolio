@@ -922,7 +922,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
             <Radio className="w-8 h-8 text-f1-red" />
-              <h2 className="text-3xl md:text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
+            <h2 className="text-3xl md:text-5xl font-bold animate-slide-up font-[var(--font-orbitron)]">
               <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent">
                 CONTACT
               </span>

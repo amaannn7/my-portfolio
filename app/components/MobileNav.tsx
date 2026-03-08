@@ -35,7 +35,7 @@ export default function MobileNav() {
 
       {/* Full-screen overlay */}
       <div
-        className={`fixed inset-0 z-[55] bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center transition-all duration-400 md:hidden ${
+        className={`fixed inset-0 z-[999] bg-[#0d0d0d] flex flex-col items-center justify-center transition-all duration-400 md:hidden ${
           open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -50,7 +50,6 @@ export default function MobileNav() {
               onClick={() => setOpen(false)}
               className="group flex items-center gap-3 text-3xl font-black tracking-widest text-white hover:text-f1-red transition-colors duration-300 font-[var(--font-orbitron)] uppercase"
             >
-              <span className="text-f1-red text-sm font-bold font-[var(--font-orbitron)]">S{i + 1}</span>
               {item}
             </a>
           ))}
