@@ -22,17 +22,15 @@ export default function Home() {
 
       {/* ===== NAVIGATION — RACE CONTROL BAR ===== */}
       <nav className="fixed top-0 w-full backdrop-blur-xl bg-black/80 border-b border-f1-red/20 z-50 animate-slide-down">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex justify-between items-center gap-2">
           {/* Driver tag */}
-          <div className="flex items-center gap-3">
-            <div className="w-1.5 h-8 bg-f1-red rounded-full"></div>
-            <h1 className="font-[var(--font-orbitron)] text-lg font-bold tracking-widest text-white">
+          <div className="flex items-center gap-2 min-w-0">
+            <div className="w-1.5 h-6 md:h-8 bg-f1-red rounded-full flex-shrink-0"></div>
+            <h1 className="font-[var(--font-orbitron)] text-sm sm:text-base md:text-lg font-bold tracking-wide md:tracking-widest text-white truncate">
               AMAAN <span className="text-f1-red">YUSUF</span>
             </h1>
-            <span className="hidden sm:block ml-2 px-2 py-0.5 text-[10px] font-bold tracking-widest bg-f1-red/20 text-f1-red border border-f1-red/30 rounded font-[var(--font-orbitron)]">
-              P1
-            </span>
-            <div className="hidden sm:flex items-center gap-1.5 ml-3 px-2.5 py-1 bg-f1-green/5 border border-f1-green/20 rounded-full">
+
+            <div className="hidden lg:flex items-center gap-1.5 ml-3 px-2.5 py-1 bg-f1-green/5 border border-f1-green/20 rounded-full flex-shrink-0">
               <div className="w-1.5 h-1.5 rounded-full bg-f1-green led-blink"></div>
               <span className="text-[9px] font-[var(--font-orbitron)] text-f1-green tracking-wider">AVAILABLE</span>
             </div>
@@ -46,7 +44,6 @@ export default function Home() {
                 href={`#${item.toLowerCase()}`}
                 className="text-sm font-semibold text-gray-400 hover:text-f1-red transition-colors duration-300 relative group tracking-wider uppercase"
               >
-                <span className="text-f1-red/50 text-[10px] font-[var(--font-orbitron)] mr-1">S{i + 1}</span>
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-f1-red transition-all duration-300 group-hover:w-full"></span>
               </a>
@@ -72,14 +69,14 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
           {/* Profile Image — Driver Card */}
-          <div className="flex justify-center md:justify-end animate-scale-in order-2 md:order-1">
+          <div className="flex justify-center md:justify-end animate-scale-in order-1 md:order-1">
             <div className="relative group">
               {/* DRS glow frame */}
-              <div className="w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-2xl border-2 border-f1-red/30 overflow-hidden drs-glow group-hover:border-f1-red/60 transition-all duration-500 bg-gradient-to-br from-f1-carbon-light to-black">
+              <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-96 md:h-96 rounded-2xl border-2 border-f1-red/30 overflow-hidden drs-glow group-hover:border-f1-red/60 transition-all duration-500 bg-gradient-to-br from-f1-carbon-light to-black">
                 <img
                   src="/profile.jpg"
                   alt="Amaan Yusuf"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover md:grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
               </div>
               {/* Overlay gradient */}
@@ -90,14 +87,14 @@ export default function Home() {
               </div>
               {/* Telemetry strip */}
               <div className="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md border border-f1-red/20 rounded-lg px-4 py-2 flex justify-between items-center">
-                <div className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-wider">DRIVER</div>
+                <div className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-wider">DEV</div>
                 <div className="text-xs font-bold text-white tracking-wide">AMAAN YUSUF</div>
               </div>
             </div>
           </div>
 
           {/* Hero Text — Race Start */}
-          <div className="text-center md:text-left space-y-5 md:space-y-8 order-1 md:order-2">
+          <div className="text-center md:text-left space-y-5 md:space-y-8 order-2 md:order-2">
             {/* Start lights */}
             <div className="flex gap-3 justify-center md:justify-start animate-fade-in">
               {[1, 2, 3, 4, 5].map((light) => (
@@ -131,8 +128,8 @@ export default function Home() {
             </div>
 
             <p className="text-base text-gray-400 leading-relaxed max-w-lg animate-fade-in animate-delay-300">
-              Racing through the digital grid with modern web and mobile technologies.
-              Clean code. Peak performance. Podium-worthy results.
+              Building modern web and mobile applications with clean code,
+              attention to detail, and a focus on performance.
             </p>
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 justify-center md:justify-start animate-scale-in animate-delay-400">
@@ -173,7 +170,7 @@ export default function Home() {
             <Flag className="w-8 h-8 text-f1-red" />
             <h2 className="text-3xl md:text-5xl font-bold animate-slide-right">
               <span className="bg-gradient-to-r from-f1-red to-white bg-clip-text text-transparent font-[var(--font-orbitron)]">
-                DRIVER PROFILE
+                ABOUT ME
               </span>
             </h2>
           </div>
@@ -199,8 +196,8 @@ export default function Home() {
               <div className="space-y-3 animate-slide-right animate-delay-200">
                 <div className="bg-f1-carbon-light border border-f1-red/20 rounded-xl p-1 scan-overlay">
                   <div className="bg-f1-red/10 border border-f1-red/10 rounded-lg px-4 py-2 flex items-center justify-between">
-                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">DRIVER DATA</span>
-                    <span className="text-[10px] font-[var(--font-orbitron)] text-gray-500">2026 SEASON</span>
+                    <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">MY INFO</span>
+                    <span className="text-[10px] font-[var(--font-orbitron)] text-gray-500">2026</span>
                   </div>
                   <div className="divide-y divide-white/5">
                     <div className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-all rounded-lg">
@@ -213,7 +210,7 @@ export default function Home() {
                     <div className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-all rounded-lg">
                       <Mail className="w-5 h-5 text-f1-red flex-shrink-0" />
                       <div>
-                        <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-wider">TEAM RADIO</p>
+                        <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-wider">EMAIL</p>
                         <p className="text-sm font-semibold text-white">amaan.yusuf4522@gmail.com</p>
                       </div>
                     </div>
@@ -255,7 +252,7 @@ export default function Home() {
       <section className="py-16 border-t border-f1-red/10 overflow-hidden relative">
         <div className="mb-12">
           <p className="text-center text-xs font-[var(--font-orbitron)] text-f1-red/70 tracking-[0.4em] uppercase">
-            &#9873; PIT LANE &mdash; TECHNOLOGIES I RACE WITH &#9873;
+            &#9873; TECHNOLOGIES I WORK WITH &#9873;
           </p>
         </div>
         <div className="relative">
@@ -313,7 +310,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Frontend</h3>
-                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">SECTOR 1</p>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">FRONTEND</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -347,7 +344,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Backend</h3>
-                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">SECTOR 2</p>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">BACKEND</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -383,7 +380,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Mobile</h3>
-                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">SECTOR 3</p>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">MOBILE</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -411,7 +408,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Databases</h3>
-                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">DATA CENTER</p>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">DATABASE</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -446,7 +443,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Cloud</h3>
-                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">CLOUD INFRA</p>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">CLOUD</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -480,7 +477,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Tools</h3>
-                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">PIT CREW</p>
+                    <p className="text-[10px] font-[var(--font-orbitron)] text-f1-red/60 tracking-widest">DEVTOOLS</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -535,12 +532,12 @@ export default function Home() {
                     <img src="/helmet.png" alt="Helmet Store" loading="lazy" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                     {/* Race position badge */}
                     <div className="absolute top-6 right-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
-                      RACE 01 &bull; 2025
+                      01 &bull; 2025
                     </div>
                     {/* Fastest lap indicator */}
                     <div className="absolute bottom-6 left-6 flex items-center gap-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-purple-500/30">
                       <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                      <span className="text-[10px] font-[var(--font-orbitron)] text-purple-400 tracking-wider">FASTEST LAP</span>
+                      <span className="text-[10px] font-[var(--font-orbitron)] text-purple-400 tracking-wider">FEATURED</span>
                     </div>
                     {/* Dark gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
@@ -619,7 +616,7 @@ export default function Home() {
                   <div className="md:col-span-2 relative h-52 md:h-auto bg-gradient-to-br from-f1-red/10 to-black overflow-hidden order-1 md:order-2 flex items-center justify-center">
                     <img src="/oracle.png" alt="Oracle Services" loading="lazy" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                     <div className="absolute top-6 left-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
-                      RACE 02 &bull; 2025
+                      02 &bull; 2025
                     </div>
                     <div className="absolute bottom-6 right-6 flex items-center gap-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-f1-green/30">
                       <div className="w-2 h-2 rounded-full bg-f1-green animate-pulse"></div>
@@ -640,7 +637,7 @@ export default function Home() {
                   <div className="md:col-span-2 relative h-52 md:h-full bg-gradient-to-br from-f1-red/10 to-black overflow-hidden flex items-center justify-center">
                     <img src="/vocabulary.PNG" alt="AI Vocabulary App" loading="lazy" className="h-48 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                     <div className="absolute top-6 right-6 bg-f1-red px-4 py-2 rounded-lg text-white text-xs font-[var(--font-orbitron)] font-bold shadow-lg shadow-f1-red/30">
-                      RACE 03 &bull; 2024
+                      03 &bull; 2024
                     </div>
                     <div className="absolute bottom-6 left-6 flex items-center gap-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-f1-green/30">
                       <div className="w-2 h-2 rounded-full bg-f1-green animate-pulse"></div>
@@ -709,7 +706,7 @@ export default function Home() {
             <div className="bg-f1-carbon-light border border-f1-red/20 rounded-2xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
               {/* Header strip */}
               <div className="bg-f1-red/10 border-b border-f1-red/20 px-4 md:px-6 py-3 flex items-center justify-between">
-                <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">EXPERIENCE LOG</span>
+                <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">OVERVIEW</span>
                 <span className="text-[10px] font-[var(--font-orbitron)] text-gray-500">2025</span>
               </div>
               <div className="p-5 md:p-8">
@@ -747,7 +744,7 @@ export default function Home() {
             <div className="space-y-6">
               <div className="bg-f1-carbon-light border border-f1-red/20 rounded-2xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
                 <div className="bg-f1-red/10 border-b border-f1-red/20 px-6 py-3 flex items-center justify-between">
-                  <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">CURRENT SEASON</span>
+                  <span className="text-[10px] font-[var(--font-orbitron)] text-f1-red tracking-widest">CURRENT</span>
                   <span className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-f1-green animate-pulse"></div>
                     <span className="text-[10px] font-[var(--font-orbitron)] text-f1-green">ACTIVE</span>
@@ -761,7 +758,7 @@ export default function Home() {
               </div>
               <div className="bg-f1-carbon-light border border-f1-red/20 rounded-2xl overflow-hidden hover:border-f1-red/40 transition-all duration-500 halo-glow">
                 <div className="bg-white/5 border-b border-white/10 px-6 py-3">
-                  <span className="text-[10px] font-[var(--font-orbitron)] text-gray-400 tracking-widest">PREVIOUS SEASON</span>
+                  <span className="text-[10px] font-[var(--font-orbitron)] text-gray-400 tracking-widest">PREVIOUS</span>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-1">G.C.E. Advanced Levels</h3>
@@ -787,7 +784,7 @@ export default function Home() {
                 </span>
               </h2>
             </div>
-            <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-[0.3em]">CAREER JOURNEY</p>
+            <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-[0.3em]">MY JOURNEY</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
@@ -934,7 +931,7 @@ export default function Home() {
           <p className="text-xs font-[var(--font-orbitron)] text-gray-500 tracking-[0.3em] mb-6">GET IN TOUCH</p>
           <p className="text-gray-400 text-lg mb-16 animate-fade-in animate-delay-200 max-w-2xl mx-auto">
             Open to internship opportunities and exciting projects.
-            Let's line up on the grid and build something championship-worthy.
+            Let's connect and build something great together.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">

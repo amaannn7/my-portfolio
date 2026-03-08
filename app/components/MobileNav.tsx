@@ -25,12 +25,12 @@ export default function MobileNav() {
       {/* Hamburger button — mobile only */}
       <button
         onClick={() => setOpen(!open)}
-        className="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 relative z-[60]"
+        className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] relative z-[60] flex-shrink-0 ml-2"
         aria-label="Toggle menu"
       >
-        <span className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${open ? 'rotate-45 translate-y-2' : ''}`} />
-        <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${open ? 'opacity-0 scale-x-0' : ''}`} />
-        <span className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+        <span className={`block w-6 h-[2px] bg-white rounded-full transition-all duration-300 origin-center ${open ? 'rotate-45 translate-y-[7px]' : ''}`} />
+        <span className={`block w-6 h-[2px] bg-white rounded-full transition-all duration-300 ${open ? 'opacity-0 scale-x-0' : ''}`} />
+        <span className={`block w-6 h-[2px] bg-white rounded-full transition-all duration-300 origin-center ${open ? '-rotate-45 -translate-y-[7px]' : ''}`} />
       </button>
 
       {/* Full-screen overlay */}
